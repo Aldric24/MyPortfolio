@@ -1,56 +1,72 @@
 body {
   margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: #0e0e12;
-  color: #eaeaea;
-  scroll-behavior: smooth;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  background: #0b0d12;
+  color: #e6e6eb;
+  line-height: 1.6;
 }
 
 .hero {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-  background: radial-gradient(circle, #1e1e2f, #0e0e12);
+  align-items: center;
+  padding: 0 12%;
+  background: linear-gradient(135deg, #101426, #0b0d12);
 }
 
-.subtitle {
-  opacity: 0.8;
-  margin-bottom: 30px;
+.hero h1 {
+  font-size: 3.2rem;
+  margin-bottom: 0.5rem;
 }
 
-.cta a {
-  margin: 0 10px;
+.hero h2 {
+  font-weight: 400;
+  opacity: 0.9;
+}
+
+.hero-buttons a {
+  display: inline-block;
+  margin-right: 12px;
   padding: 12px 24px;
-  border: 1px solid #7dd3fc;
-  color: #7dd3fc;
-  text-decoration: none;
   border-radius: 6px;
+  text-decoration: none;
+}
+
+.primary {
+  background: #5da9ff;
+  color: #000;
+}
+
+.secondary {
+  border: 1px solid #5da9ff;
+  color: #5da9ff;
 }
 
 .section {
-  padding: 80px 10%;
+  padding: 80px 12%;
 }
 
 .section.dark {
-  background: #14141b;
+  background: #12152b;
 }
 
-.card-grid, .skills-grid {
+.skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
 }
 
-.card {
-  background: #1c1c27;
-  padding: 20px;
+.skill-block {
+  background: #181c3a;
+  padding: 24px;
   border-radius: 8px;
 }
 
-.timeline .event {
-  margin-bottom: 30px;
-  padding-left: 20px;
-  border-left: 2px solid #7dd3fc;
+.experience, .project {
+  margin-bottom: 40px;
+}
+
+.meta {
+  font-size: 0.9rem;
+  opacity: 0.7;
 }
