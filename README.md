@@ -1,2 +1,2 @@
 # MyPortfolio
-f24games.com
+https://aldric24.github.io/MyPortfolio/
