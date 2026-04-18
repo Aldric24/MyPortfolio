@@ -266,7 +266,7 @@ section {
 
 .section-label {
   font-family: var(--mono);
-  font-size: 3.5rem;
+  font-size: clamp(2.5rem, 8vw, 3.5rem);
   text-transform: none;
   font-style: bold;
   font-weight: 400;
@@ -293,7 +293,7 @@ section {
 /* Projects Title Overrides & Effects */
 #projects .section-label {
   font-family: var(--mono);
-  font-size: 3.5rem;
+  font-size: clamp(2.5rem, 8vw, 3.5rem);
   text-transform: none;
   font-style: bold;
   font-weight: 400;
@@ -1271,16 +1271,35 @@ footer p {
   }
 
   .exp-item {
-    grid-template-columns: 100px 1fr;
-    gap: 0 1rem;
+    grid-template-columns: 1fr;
+    gap: 1rem 0;
+    padding-left: 2rem;
   }
 
   .exp-item::before {
-    left: 100px;
+    left: 0;
   }
 
   .exp-dot {
-    left: 100px;
+    left: 0;
+    top: 2.2rem;
+  }
+
+  .exp-meta {
+    padding-top: 0;
+  }
+
+  .exp-content {
+    padding-left: 0;
+  }
+
+  .exp-date {
+    display: inline-block;
+    margin-bottom: 0.5rem;
+  }
+
+  .exp-date br {
+    display: none;
   }
 
   footer {
@@ -1301,6 +1320,15 @@ footer p {
   }
 
   /* Modal mobile */
+  .proj-modal-overlay {
+    padding: 1rem;
+    padding-bottom: 5rem;
+  }
+
+  .proj-modal {
+    max-height: calc(100vh - 6rem);
+  }
+
   .proj-modal-body {
     grid-template-columns: 1fr;
   }
@@ -1315,5 +1343,48 @@ footer p {
 
   .proj-modal-title {
     font-size: 1.3rem;
+  }
+
+  .modal-nav-btn {
+    top: auto;
+    bottom: 1rem;
+    transform: none;
+    width: 40px;
+    height: 40px;
+  }
+
+  .modal-nav-btn:hover {
+    transform: scale(1.1);
+  }
+
+  .modal-nav-btn.prev {
+    left: 1rem;
+  }
+
+  .modal-nav-btn.next {
+    right: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  nav {
+    padding: 1rem;
+  }
+
+  .nav-links {
+    gap: 0.75rem;
+  }
+
+  .nav-links a {
+    font-size: 0.65rem;
+  }
+
+  .hero-stats {
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .hero-tag {
+    font-size: 0.6rem;
   }
 }
