@@ -435,13 +435,23 @@ function slugify(title) {
   return title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 }
 
+// Remove async probing functions
+
 function renderCarousel() {
   const carousel = document.getElementById('projCarousel');
   if (!carousel) return;
   
   carousel.innerHTML = PROJECTS.map((p, i) => {
     const slug = slugify(p.title);
-    const images = p.images || [];
+    
+    // Pull images from the auto-generated file mapping, falling back to empty array
+    if (window.PROJECT_IMAGES && window.PROJECT_IMAGES[slug]) {
+      p.images = window.PROJECT_IMAGES[slug];
+    } else {
+      p.images = p.images || [];
+    }
+    
+    const images = p.images;
     
     let imgTags = '';
     if (images.length > 0) {
@@ -474,7 +484,6 @@ function renderCarousel() {
     const imgs = bg.querySelectorAll('img');
     if (imgs.length > 1) {
       let currentIndex = 0;
-      // Stagger intervals slightly based on Math.random so they don't all flip at the exact same millisecond
       setTimeout(() => {
         setInterval(() => {
           imgs[currentIndex].classList.remove('active');
@@ -494,7 +503,7 @@ function renderCarousel() {
   });
 }
 
-// Initialize the carousel
+// Initialize the carousel after discovering images
 renderCarousel();
 
 // Close button
